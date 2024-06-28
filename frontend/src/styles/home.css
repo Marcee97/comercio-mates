@@ -1,0 +1,85 @@
+.home{
+    font-family: sans-serif;
+   height: 100vh;
+padding: 7em 1.5em;
+background-image:linear-gradient(
+    to top,
+    #000000c5,
+    #00000071 15%,
+    #00000059,
+    #0000008c 90%
+  ), url(https://acdn.mitiendanube.com/stores/001/104/123/products/1x1-imperial-cueroliso-virolaapliques-50888c50b785b4a69f16964523815846-1024-1024.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+.contenedor-card{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    cursor:default;
+    gap: 1em;
+    transition: all .8s ease ;
+
+    width: 49%;
+    padding: 2em ;
+    border-radius: 6px;
+    max-width: 600px;
+    min-width: 300px;
+    margin-left: auto;
+    height: 45vh;
+    background-color: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(3px);
+    color: #fff;
+    .titulo-card-home{
+        font-size: 1.9em;
+        color: #579655;
+    }
+.button-home{
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(119, 143, 73, 0.404);
+    padding: 1em 0em 1em 2.4em;
+    border-radius: 0px 0px 5px 5px;
+    font-size: .9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    cursor: pointer;
+    backdrop-filter: blur(3px);
+    transition: all .8s ease ;
+    text-decoration: none;
+    color: #f3f2f2;
+
+    
+    .arrow-flecha{
+        font-size: 1.5em;
+    }
+
+}
+
+.button-home:hover{
+    transition: .5s ease-in-out ;
+    background-color: rgb(148, 172, 103);
+
+    padding: 1.3em 0em 1em 2.4em;
+
+    .arrow-flecha{
+        margin-left: 10px;
+    transition: all .5s ease ;
+
+    }
+}
+}
+
+}
+
+
+.contenedor-card:hover{
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.541);
+    backdrop-filter: blur(9px);
+}

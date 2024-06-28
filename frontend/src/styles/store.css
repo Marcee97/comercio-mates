@@ -1,0 +1,202 @@
+body {
+  background-color: #363636;
+}
+.store {
+  padding: 11em 0.5em 0.5em 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  .palabra-fondo-store {
+    color: #4b4b4b;
+    font-size: 3em;
+    font-family: monospace;
+    position: absolute;
+    top: 9px;
+    font-size: 23em;
+    z-index: -1;
+    font-weight: bold;
+    position: fixed;
+    margin: auto;
+  }
+  .contenedor-products {
+    padding: 5em 0 1em 0;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, 420px);
+    justify-items: center;
+    gap: 0.9em;
+    .articulo {
+      background-color: #ffffff;
+      border-radius: 9px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      min-width: 240px;
+      .cont-img-articulo-store {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .img-articulo-store {
+          width: 80%;
+          max-width: 270px;
+          min-width: 190px;
+          position: relative;
+          display: block;
+          object-fit: cover;
+          border-radius: 9px;
+        }
+      }
+      .cont-img-articulo-store::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 9px 9px 0px 0px;
+        background: linear-gradient(
+          to top,
+          #000000f3,
+          #00000000 30%,
+          #00000000 50%,
+          #00000000
+        );
+      }
+
+      .data-articulo {
+        background-color: #1f1f1f;
+        font-family: sans-serif;
+        font-size: 1.1em;
+        width: 100%;
+        height: 100%;
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        color: #ffffff;
+        border-radius: 0px 0px 9px 9px;
+        gap: 0.5em;
+        position: relative;
+        .precio-producto-store {
+          font-size: 1.5em;
+        }
+
+        .button-add-store {
+          padding: 0.8em 4em 0.8em 0.9em;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          font-size: 1em;
+          gap: 0.5em;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border: none;
+          border-radius: 0px 0px 9px 9px;
+          background-color: #2ea12e;
+          color: #fff;
+          .arrow-flecha-store {
+            font-size: 1.3em;
+          }
+        }
+      }
+    }
+  }
+
+  .separador-products {
+    position: relative;
+    width: 100%;
+    background: #00000083;
+    border-radius: 9px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 99px);
+    padding: 0.5em;
+    gap: 5px;
+    .img-separador {
+      width: 100%;
+      border-radius: 9px;
+      width: 100%;
+      object-fit: cover;
+      transition: .4s all ease;
+
+    }
+    .img-separador:hover{
+      transform: scale(1.2);
+      transition: .4s all ease;
+    }
+
+    .img-separador-store-cuatro {
+      grid-column: 6/8;
+      grid-row: 2;
+    }
+    .img-separador-store-tres {
+      grid-row: 1;
+      grid-column: 3/5;
+    }
+    .img-separador-store-dos {
+      grid-column: 7/8;
+    }
+    .img-separador-store-seis {
+      grid-column: 2;
+      grid-row: 3;
+    }
+    .img-separador-store-siete {
+      grid-column: 5;
+      grid-row: 1;
+    }
+    .img-separador-store-ocho {
+      grid-row: 4;
+    }
+    .img-separador-store-nueve {
+      grid-column: 5;
+      grid-row: 4;
+    }
+    .img-separador-store-diez {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    .img-separador-store-once {
+      grid-column: 6;
+      grid-row: 1;
+    }
+    .img-separador-store-doce {
+      grid-column: 8;
+      grid-row: 3;
+    }
+    .img-separador-store-trece {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+
+  .contenedor-mensaje-animado{
+    position: absolute;
+    width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  padding: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 1s all ease;
+  background-color: #000000a2;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  .mensaje-animado{
+    color: #fff;
+    transform: translateX();
+    transition: 1s all ease;
+    font-size: 9em;
+    font-family: sans-serif;
+    transform: rotateX(90deg);
+
+
+  }
+  }
+}
