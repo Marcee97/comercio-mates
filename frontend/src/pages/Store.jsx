@@ -49,6 +49,7 @@ export const Store = () => {
           alt="Foto deco separador"
           className="img-separador-store-dos img-separador"
         />
+       
         <img
           src="https://i.pinimg.com/236x/30/59/65/305965082f8dfab53281e125be9152ac.jpg"
           alt="Foto deco separador"
@@ -79,16 +80,10 @@ export const Store = () => {
           alt="Foto deco separador store"
           className="img-separador-store-ocho img-separador"
         />
-        <img
-          src="https://i.pinimg.com/236x/37/f2/8d/37f28d572c5d7b2d7b5808c0a27f32c8.jpg"
-          alt="Foto deco separador store"
-          className="img-separador-store-nueve img-separador"
-        />
-        <img
-          src="https://i.pinimg.com/736x/7a/e0/d5/7ae0d53c221519d3026addc5dec20d3b.jpg"
-          alt="Foto deco separador store"
-          className="img-separador-store-diez img-separador"
-        />
+        
+        
+        
+       
         <img
           src="https://i.pinimg.com/236x/91/01/ec/9101eca8f0f2a2734d802248d7a98c04.jpg"
           alt="Foto deco separador store"
@@ -99,11 +94,44 @@ export const Store = () => {
           alt="Foto deco separador store"
           className="img-separador-store-doce img-separador"
         />
+         <img
+          src="https://i.pinimg.com/736x/7a/e0/d5/7ae0d53c221519d3026addc5dec20d3b.jpg"
+          alt="Foto deco separador store"
+          className="img-separador-store-diez img-separador"
+        />
         <img
           src="https://i.pinimg.com/236x/2d/87/cd/2d87cd9337cffe59a0860104c6f2c6ce.jpg"
           alt="Foto deco separador store"
           className="img-separador-store-trece img-separador"
         />
+      </div>
+      <div className="contenedor-products">
+      {data.map((items, index) => (
+          <article className="articulo" key={index}>
+            <div className="cont-img-articulo-store">
+              <img
+                src={items.imagen}
+                className="img-articulo-store"
+                alt="Foto producto"
+              />
+            </div>
+            <div className="data-articulo">
+              <p>{items.nombre}</p>
+              {items.stock > 0 ? (
+                <p style={{ color: "green", fontWeight: "bold" }}>Disponible</p>
+              ) : (
+                <p style={{ color: "red", fontWeight: "bold" }}>Agotado</p>
+              )}
+              <strong className="precio-producto-store">${items.precio}</strong>
+              <button className="button-add-store">
+                Add
+                <span className="material-symbols-outlined arrow-flecha-store">
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
