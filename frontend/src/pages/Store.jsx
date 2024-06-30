@@ -1,13 +1,65 @@
 import "../styles/store.css";
 import { data } from "../helpers/data.js";
+import { carrousel } from "../helpers/data.js";
+import { useEffect, useState, useRef } from "react";
 
 export const Store = () => {
- 
+  const carrouselRef = useRef(null);
+  const [undex, setUndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUndex((prevUndex) => prevUndex + 1);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const carrouselElement = carrouselRef.current;
+    if (undex > carrousel.length + 1) {
+      setUndex(0);
+    }
+    carrouselElement.style.transform = `translateX(${undex * -33.32}%)`;
+  }, [undex]);
 
   return (
     <section className="store">
-      <p className="palabra-fondo-store">MATES 쓰라린 친구</p>
+      <p className="palabra-fondo-store">STORE MATES</p>
+
+      {carrousel.map((items, idx) => (
+        <div className="carrousel-store" key={idx}>
+          <div className="contenedor-carrousel" ref={carrouselRef}>
+            <img
+              src={items.imagenes}
+              className="img-carrousel"
+              alt="carrousel de imagenes"
+            />
+            <img
+              src={items.imagenes[1]}
+              className="img-carrousel"
+              alt="carrousel de imagenes"
+            />
+            <img
+              src={items.imagenes[2]}
+              className="img-carrousel"
+              alt="carrousel de imagenes"
+            />
+          </div>
+          <div className="contenedor-titulo">
+            <h3 className="titulo-store">Mates</h3>
+          </div>
+          <div className="nav-store">
+            <nav className="contenedor-nav-store">
+              <ul className="ul-nav">
+                <li className="li-nav">Accesorios</li>
+                <li className="li-nav">Camionero</li>
+                <li className="li-nav">Madera Lisa</li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      ))}
 
       <div className="contenedor-products">
         {data.map((items, index) => (
@@ -38,7 +90,6 @@ export const Store = () => {
         ))}
       </div>
       <div className="separador-products">
-        
         <img
           src="https://i.pinimg.com/736x/80/e3/01/80e30144b60b9cbf1bf7aa49cf2268e9.jpg"
           alt="Foto deco separador"
@@ -49,7 +100,7 @@ export const Store = () => {
           alt="Foto deco separador"
           className="img-separador-store-dos img-separador"
         />
-       
+
         <img
           src="https://i.pinimg.com/236x/30/59/65/305965082f8dfab53281e125be9152ac.jpg"
           alt="Foto deco separador"
@@ -80,10 +131,7 @@ export const Store = () => {
           alt="Foto deco separador store"
           className="img-separador-store-ocho img-separador"
         />
-        
-        
-        
-       
+
         <img
           src="https://i.pinimg.com/236x/91/01/ec/9101eca8f0f2a2734d802248d7a98c04.jpg"
           alt="Foto deco separador store"
@@ -94,7 +142,7 @@ export const Store = () => {
           alt="Foto deco separador store"
           className="img-separador-store-doce img-separador"
         />
-         <img
+        <img
           src="https://i.pinimg.com/736x/7a/e0/d5/7ae0d53c221519d3026addc5dec20d3b.jpg"
           alt="Foto deco separador store"
           className="img-separador-store-diez img-separador"
@@ -106,7 +154,7 @@ export const Store = () => {
         />
       </div>
       <div className="contenedor-products">
-      {data.map((items, index) => (
+        {data.map((items, index) => (
           <article className="articulo" key={index}>
             <div className="cont-img-articulo-store">
               <img

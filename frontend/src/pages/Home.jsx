@@ -10,9 +10,7 @@ export const Home = () => {
 arrow_forward
 </span></Link>
         </div>
-        <footer>
-            <p>Footer</p>
-        </footer>
+       
     </section>
   )
 }

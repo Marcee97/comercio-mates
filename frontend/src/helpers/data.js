@@ -42,3 +42,11 @@ export const data = [
     stock: "1",
   },
 ];
+
+export const carrousel = [
+  {
+    imagenes:[
+      "https://images.pexels.com/photos/12066974/pexels-photo-12066974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/25288209/pexels-photo-25288209/free-photo-of-blanco-y-negro-ciudad-cielo-soleado.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load","https://images.pexels.com/photos/1764702/pexels-photo-1764702.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"]
+  }
+  
+];

@@ -10,7 +10,7 @@ export const Navbar = () => {
 
   return (
     <nav className="nav-navbar">
-      <h2>LOGO</h2>
+      <Link to={"/"} className='logo-navbar'><h2>LOGO</h2></Link>
       <ul className='ul-navbar'>
         <Link to={"/store"} className='li-navbar'>Store</Link>
         <li className='li-navbar'>About</li>
@@ -18,6 +18,5 @@ export const Navbar = () => {
       </ul>
     </nav>
         
-    
   )
 }
