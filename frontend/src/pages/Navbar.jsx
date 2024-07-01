@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 
-export const Navbar = () => {
+export const Navbar = ({visible}) => {
 
 
 
@@ -9,7 +9,7 @@ export const Navbar = () => {
 
 
   return (
-    <nav className="nav-navbar">
+    <nav className={visible ? 'nav-navbar' : 'display-none'}>
       <Link to={"/"} className='logo-navbar'><h2>LOGO</h2></Link>
       <ul className='ul-navbar'>
         <Link to={"/store"} className='li-navbar'>Store</Link>

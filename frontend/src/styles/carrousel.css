@@ -1,0 +1,21 @@
+.carrousel{
+max-width: 120em;
+max-height: 49vh;
+overflow: hidden;
+border-radius: 9px;
+box-shadow: 4px 6px 40px 10px;
+}
+.carrousel .contenedor-carrousel{
+    transition: .5s all ease;
+    width: 300%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+
+
+}
+
+.carrousel .contenedor-carrousel .img-carrousel{
+width: calc(100% / 3);
+object-fit: cover;
+}
