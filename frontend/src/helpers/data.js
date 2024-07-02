@@ -2,14 +2,14 @@ export const data = [
   {
     imagen:
       "https://http2.mlstatic.com/D_NQ_NP_633996-MLU75174667592_032024-O.webp",
-    nombre: "Mate Imperial",
+    nombre: "Mate Imperial Acero Inoxidable Premium Deluxe",
     precio: "1.221",
     stock: "2",
   },
   {
     imagen:
       "https://http2.mlstatic.com/D_NQ_NP_633996-MLU75174667592_032024-O.webp",
-    nombre: "Mate Camionero",
+    nombre: "Mate Camionero Madera Lisa Premiun Deluxe Detalles",
     precio: "1.521",
     stock: "5",
   },

@@ -2,8 +2,10 @@ import "../styles/store.css";
 import { data } from "../helpers/data.js";
 import { Carrousel } from "../ui/Carrousel.jsx";
 import { Navbar } from "../pages/Navbar.jsx";
-import { Children, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import { Modal } from "../ui/Modal.jsx";
+import { Carrito } from "../ui/Carrito.jsx";
+
 
 export const Store = () => {
 
@@ -12,24 +14,18 @@ const [itemSelected, setItemSelected] = useState(null)
 const [modalOpen, setModalOpen] = useState(false)
   useEffect(()=> {
     const scroll = ()=> {
-
       if(window.scrollY > 40){
         setNavVisible(false)
     }else{
-      
       setNavVisible(true)
   }
 }
 window.addEventListener('scroll', scroll)
   },[])
-  
-
-
   const clickOpen = (items) => {
 setItemSelected(items)
 setModalOpen(true)
 }
-
 const clickClose = ()=> {
   setModalOpen(false)
   setItemSelected(null)
@@ -37,15 +33,22 @@ const clickClose = ()=> {
 
 
 
+
   return (
     <>
       <Navbar visible={navVisible}/>
 
+      <Carrito/>
+
       <Modal modalOpen={modalOpen} itemSelected={itemSelected} clickClose={clickClose}>
-        {Children}
       </Modal>
       <section className="store">
         <p className="palabra-fondo-store">STORE MATES</p>
+        <div className="contenedor-redes-fondo-store">
+        <p className="redes-fondo-store"><i className="fa-brands fa-twitter"></i></p>
+        <p className="redes-fondo-store"><i className="fa-brands fa-instagram"></i></p>
+        <p className="redes-fondo-store"><i className="fa-brands fa-tiktok"></i></p>
+        </div>
         <Carrousel />
 
         <div className="contenedor-products">

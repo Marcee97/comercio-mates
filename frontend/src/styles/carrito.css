@@ -1,0 +1,28 @@
+.carrito{
+    background-color: rgba(0, 0, 0, 0.973);
+position: absolute;
+z-index: 45;
+width: 100%;
+padding: .8em;
+transform: translateY();
+transition:  .5s all ease;
+}
+
+.carrito .contenedor-carrito{
+    color: #FFF;
+    width: 100%;
+    display: flex;
+
+}
+.carrito .contenedor-carrito .img-carrito{
+    width: 100%;
+    max-width: 200px;
+    border-radius: 9px;
+}
+.contenedor-descripcion{
+padding: .5em;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: start;
+}
