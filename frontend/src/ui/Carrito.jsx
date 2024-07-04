@@ -8,8 +8,8 @@ const [carritoCloseOpen, setCarritoCloseOpen] = useState(despliego)
 
 
 useEffect(()=> {
-totalItems(infoCarrito.length)
-},[infoCarrito])
+totalItems(infoProducto.length)
+},[infoProducto])
 
 
 useEffect(()=> {
@@ -27,6 +27,10 @@ const clickClose = () => {
 setCarritoCloseOpen(prevClose => (!prevClose))
   console.log(carritoCloseOpen)
 }
+
+const clickRemove = (items)=> {
+setInfoProducto(infoProducto.filter(product => product !== items))
+}
   return (
     <>
      <div className={carritoCloseOpen ? 'carrito' : 'carrito is-open'}>
@@ -43,7 +47,7 @@ setCarritoCloseOpen(prevClose => (!prevClose))
           {items.stock > 0 ? (<p style={{color: "green"}}>Disponible</p>): (<p style={{color: "red"}}>Agotado</p>)}
           <strong>{items.precio}</strong>
   <button className="button-consulta-carrito">Consultar<i className="fa-brands fa-whatsapp icono-carrito"></i></button>
-  <button className="button-consulta-carrito">Eliminar</button>
+  <button className="button-consulta-carrito" onClick={()=> clickRemove(items)}>Eliminar</button>
           </div>
         </div>
       ) )

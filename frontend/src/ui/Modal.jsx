@@ -18,19 +18,22 @@ const [itemInfo, setItemInfo] = useState([])
     <>
       {itemInfo && itemInfo.map((items, index) => (
         <div key={index} className="modal">
-          <img src={items.imagen} alt="imagen de producto modal" />
+          <img src={items.imagen} className="img-modal" alt="imagen de producto modal" />
+          <div className="contenedor-descripcion">
+
           <p  className="nombre-producto-modal">{items.nombre}</p>
           {items.stock > 0 ? (
-                  <p style={{ color: "green", fontWeight: "bold" }}>
+            <p style={{ color: "green", fontWeight: "bold" }}>
                     Disponible
                   </p>
                 ) : (
                   <p style={{ color: "red", fontWeight: "bold" }}>Agotado</p>
-                )}
+                  )}
                 
-          <strong>{items.precio}</strong>
-          <button onClick={clickClose}>Cerrar</button>
-          <button onClick={()=> addCarrito(items)}>Agregar al carrito</button>
+          <strong>$ {items.precio}</strong>
+          <button onClick={()=> addCarrito(items)} className="button-modal">Agregar al carrito</button>
+          <button onClick={clickClose} className="button-modal-cerrar">Cerrar</button>
+                </div>
         </div>
       ))}
     </>
