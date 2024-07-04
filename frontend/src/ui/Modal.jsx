@@ -1,47 +1,38 @@
-import "../styles/modal.css";
+import { useEffect } from "react";
 import { useState } from "react";
-import { Carrito } from "../ui/Carrito";
+import "../styles/modal.css";
 
 
 
-export const Modal = ({ modalOpen, itemSelected, clickClose }) => {
+export const Modal = ({itemSeleccionado, addCarrito}) => {
 
-  const [dataCarrito, setDataCarrito] = useState([])
+const [itemInfo, setItemInfo] = useState([])
+  useEffect(()=> {
+    setItemInfo(itemSeleccionado)
+  },[itemSeleccionado])
 
-  const agregarCarrito = (items)=> {
-    setDataCarrito((prevCarrito) => [...prevCarrito, items])
-    }
-
+  const clickClose = ()=> {
+    setItemInfo([])
+  }
   return (
     <>
-      {modalOpen && itemSelected && (
-        <article className="article-modal">
-          <div className="contenedor-modal">
-            <img
-              src={itemSelected.imagen}
-              alt="Imagen producto modal"
-              className="img-modal"
-            />
-            <div className="data-articulo-modal">
-              <p>{itemSelected.nombre}</p>
-              {itemSelected.stock > 0 ? (
-                <p style={{ color: "green" }}>Disponible</p>
+      {itemInfo && itemInfo.map((items, index) => (
+        <div key={index} className="modal">
+          <img src={items.imagen} alt="imagen de producto modal" />
+          <p  className="nombre-producto-modal">{items.nombre}</p>
+          {items.stock > 0 ? (
+                  <p style={{ color: "green", fontWeight: "bold" }}>
+                    Disponible
+                  </p>
                 ) : (
-                  <p style={{ color: "red" }}>Agotado</p>
-                  )}
-              <strong className="precio-modal">${itemSelected.precio}</strong>
-              <div className="botonera-modal">
-                <button className="button-modal" onClick={clickClose}>
-                Volver
-                </button>
-                <button className="button-modal" onClick={()=> agregarCarrito(itemSelected) }>Agregar Al Carrito</button>
-                <button className="button-modal">Comprar Ahora</button>
-              </div>
-            </div>
-          </div>
-        </article>
-      )}
-    <Carrito info={dataCarrito}/>
+                  <p style={{ color: "red", fontWeight: "bold" }}>Agotado</p>
+                )}
+                
+          <strong>{items.precio}</strong>
+          <button onClick={clickClose}>Cerrar</button>
+          <button onClick={()=> addCarrito(items)}>Agregar al carrito</button>
+        </div>
+      ))}
     </>
   );
 };

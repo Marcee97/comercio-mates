@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Navbar } from "../pages/Navbar";
 import '../styles/home.css'
 export const Home = () => {
 
   
   return (
     <>
-      <Navbar visible={true}/>
+     
     <section className="home">
         <div className='contenedor-card'>
             <h2 className='titulo-card-home'>Encontra de todo mates</h2>

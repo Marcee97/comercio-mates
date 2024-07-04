@@ -1,47 +1,18 @@
 import "../styles/store.css";
 import { data } from "../helpers/data.js";
 import { Carrousel } from "../ui/Carrousel.jsx";
-import { Navbar } from "../pages/Navbar.jsx";
-import { useEffect, useState} from "react";
-import { Modal } from "../ui/Modal.jsx";
-import { Carrito } from "../ui/Carrito.jsx";
 
 
-export const Store = () => {
 
-const [navVisible, setNavVisible] = useState(true)
-const [itemSelected, setItemSelected] = useState(null)
-const [modalOpen, setModalOpen] = useState(false)
-  useEffect(()=> {
-    const scroll = ()=> {
-      if(window.scrollY > 40){
-        setNavVisible(false)
-    }else{
-      setNavVisible(true)
-  }
-}
-window.addEventListener('scroll', scroll)
-  },[])
-  const clickOpen = (items) => {
-setItemSelected(items)
-setModalOpen(true)
-}
-const clickClose = ()=> {
-  setModalOpen(false)
-  setItemSelected(null)
-}
-
+export const Store = ({info}) => {
 
 
 
   return (
     <>
-      <Navbar visible={navVisible}/>
+      
 
-      <Carrito/>
 
-      <Modal modalOpen={modalOpen} itemSelected={itemSelected} clickClose={clickClose}>
-      </Modal>
       <section className="store">
         <p className="palabra-fondo-store">STORE MATES</p>
         <div className="contenedor-redes-fondo-store">
@@ -53,7 +24,7 @@ const clickClose = ()=> {
 
         <div className="contenedor-products">
           {data.map((items, index) => (
-            <article className="articulo" key={index} onClick={()=> clickOpen(items)}>
+            <article className="articulo" key={index} onClick={()=> info(items)}>
               <div className="cont-img-articulo-store">
                 <img
                   src={items.imagen}
@@ -149,7 +120,7 @@ const clickClose = ()=> {
         </div>
         <div className="contenedor-products">
           {data.map((items, index) => (
-            <article className="articulo" key={index}>
+            <article className="articulo" key={index} onClick={()=> info(items)}>
               <div className="cont-img-articulo-store">
                 <img
                   src={items.imagen}
