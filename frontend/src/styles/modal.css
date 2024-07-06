@@ -13,18 +13,20 @@
   backdrop-filter: blur(5px);
 
 }
+
 .img-modal {
   width: 50%;
-  max-width: 250px;
+  max-width: 210px;
   min-width: 14em;
-  border-radius: 9px;
+  min-height: 12em;
+  border-radius: 9px 0px 0px 9px;
 }
 
 .contenedor-descripcion {
   width: 100%;
   max-width: 20em;
   height: 100%;
-  max-height: 250px;
+  max-height: 254px;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -34,7 +36,30 @@
   backdrop-filter: blur(8px);
   background-color: #0000009a;
   font-size: 1.4em;
+  border-radius: 0px 9px 9px 0px;
+
 }
+
+@media(max-width:597px){
+  .modal{
+    flex-direction: column;
+  }
+  .contenedor-descripcion{
+  border-radius: 0px 0px 9px 9px;
+
+    width: 50%;
+    max-width:250px;
+    font-size: 1.1em;
+    min-width: 250px;
+  }
+  .img-modal{
+    width: 50%;
+    max-width:252px;
+    min-width: 252px;
+  border-radius: 9px 9px 0px 0px;
+
+  }
+  }
 
 .button-modal {
   border: none;

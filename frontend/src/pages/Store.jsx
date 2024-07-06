@@ -2,29 +2,31 @@ import "../styles/store.css";
 import { data } from "../helpers/data.js";
 import { Carrousel } from "../ui/Carrousel.jsx";
 
-
-
-export const Store = ({info}) => {
-
-
-
+export const Store = ({ info }) => {
   return (
     <>
-      
-
-
       <section className="store">
         <p className="palabra-fondo-store">STORE MATES</p>
         <div className="contenedor-redes-fondo-store">
-        <p className="redes-fondo-store"><i className="fa-brands fa-twitter"></i></p>
-        <p className="redes-fondo-store"><i className="fa-brands fa-instagram"></i></p>
-        <p className="redes-fondo-store"><i className="fa-brands fa-tiktok"></i></p>
+          <p className="redes-fondo-store">
+            <i className="fa-brands fa-twitter"></i>
+          </p>
+          <p className="redes-fondo-store">
+            <i className="fa-brands fa-instagram"></i>
+          </p>
+          <p className="redes-fondo-store">
+            <i className="fa-brands fa-tiktok"></i>
+          </p>
         </div>
         <Carrousel />
 
         <div className="contenedor-products">
           {data.map((items, index) => (
-            <article className="articulo" key={index} onClick={()=> info(items)}>
+            <article
+              className="articulo"
+              key={index}
+              onClick={() => info(items)}
+            >
               <div className="cont-img-articulo-store">
                 <img
                   src={items.imagen}
@@ -120,7 +122,11 @@ export const Store = ({info}) => {
         </div>
         <div className="contenedor-products">
           {data.map((items, index) => (
-            <article className="articulo" key={index} onClick={()=> info(items)}>
+            <article
+              className="articulo"
+              key={index}
+              onClick={() => info(items)}
+            >
               <div className="cont-img-articulo-store">
                 <img
                   src={items.imagen}

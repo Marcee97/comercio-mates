@@ -3,27 +3,19 @@ body {
 }
 
 .store {
-  padding: 42vw 0.5em 0.5em 0.5em;
+  padding: 48vw 2em 2em 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.contenedor-titulo .titulo-store {
-  z-index: 35;
-  color: #ffffff5b;
-  font-size: 5em;
-  font-family: monospace;
-  background-color: #0000009d;
-  padding: 1em;
-}
 
 .store .palabra-fondo-store {
   color: #141312;
   font-family: monospace;
-  top: 7vw;
-  font-size: 14vw;
+  top: 17vw;
+  font-size: 12vw;
   z-index: -1;
   font-weight: bold;
   position: fixed;
@@ -33,12 +25,13 @@ body {
   display: flex;
   justify-content: space-around;
   width: 20%;
-  top: 34vw;
+  top: 32vw;
   position: fixed;
+  gap: 1.5em;
 }
 
 .store .redes-fondo-store {
-  font-size: 3vw;
+  font-size: 1.9rem;
   z-index: -1;
   font-weight: bold;
   color: #050505;
@@ -56,13 +49,15 @@ body {
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   gap: 0.5em;
-  background-color: rgba(129, 129, 129, 0.356);
+  background-color: rgba(53, 53, 53, 0.781);
   padding: 1em;
   border-radius: 9px;
   margin: 0.5em;
   width: 100%;
   min-width: 270px;
   margin-bottom: 8em;
+  box-shadow: 4px 6px 40px 10px;
+
 }
 
 .store .contenedor-products .articulo {
@@ -87,7 +82,7 @@ body {
   .articulo
   .cont-img-articulo-store
   .img-articulo-store {
-  width: 100%;
+  width: 60%;
   max-width: 292px;
   min-width: 150px;
   max-height: 335px;
@@ -95,6 +90,17 @@ body {
   display: block;
   object-fit: cover;
   border-radius: 9px;
+
+}
+
+@media(max-width:355px){
+  .store
+  .contenedor-products
+  .articulo
+  .cont-img-articulo-store .img-articulo-store{
+    width: 60%;
+    min-width: 50px;
+  }
 }
 
 .store .contenedor-products .articulo .cont-img-articulo-store::after {
@@ -169,6 +175,8 @@ body {
   justify-items: center;
   padding: 1em;
   gap: 5px;
+box-shadow: 4px 6px 40px 10px;
+
 }
 
 .store .separador-products .img-separador {
