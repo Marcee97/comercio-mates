@@ -3,11 +3,12 @@ body {
 }
 
 .store {
-  padding: 48vw 2em 2em 2em;
+  padding: 41vw 9em 2em 9em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 
@@ -45,18 +46,20 @@ body {
 .store .contenedor-products {
   padding: 5em 0 1em 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
-  gap: 0.5em;
+  gap: 3em;
   background-color: rgba(53, 53, 53, 0.781);
-  padding: 1em;
+  padding: 2em;
   border-radius: 9px;
   margin: 0.5em;
   width: 100%;
-  min-width: 270px;
+  min-width: min-content;
   margin-bottom: 8em;
   box-shadow: 4px 6px 40px 10px;
+  backdrop-filter: blur(4px);
+
 
 }
 
@@ -67,14 +70,25 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  min-width: 240px;
-  max-width: 290px;
+ 
+ max-width: 290px;
+ min-width: 290px;
+ height: 460px;
+}
+
+.articulo:hover{
+  outline: 1px solid #fff;
+  cursor: pointer;
 }
 
 .store .contenedor-products .articulo .cont-img-articulo-store {
   display: flex;
   justify-content: center;
   position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  padding: .5em;
 }
 
 .store
@@ -83,11 +97,9 @@ body {
   .cont-img-articulo-store
   .img-articulo-store {
   width: 60%;
-  max-width: 292px;
+  max-width: 252px;
   min-width: 150px;
   max-height: 335px;
-  position: relative;
-  display: block;
   object-fit: cover;
   border-radius: 9px;
 
@@ -176,6 +188,9 @@ body {
   padding: 1em;
   gap: 5px;
 box-shadow: 4px 6px 40px 10px;
+margin-bottom: 8em;
+backdrop-filter: blur(4px);
+
 
 }
 

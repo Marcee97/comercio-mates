@@ -1,0 +1,98 @@
+.footer {
+  width: 100%;
+  background-color: #706d68;
+  display: flex;
+  justify-content: space-between;
+  color: #141414;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 2em 5em;
+  position: relative;
+  height: 65vh;
+  
+}
+
+@media(max-width:576px){
+    .footer{
+        flex-direction: column;
+        gap: 2em;
+    }
+}
+
+.titulo-footer {
+  font-weight: 100;
+}
+
+.contenedor-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
+  font-size: 1.3em;
+}
+.cont-redes{
+display: flex;
+gap: .5em;
+}
+
+.redes-footer{
+    border: .01em solid rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: .6em;
+}
+
+
+.contenedor-email{
+display: flex;
+gap: .5em;
+}
+
+.input-email{
+    padding: .5em;
+    border: none;
+    border-radius: 9px;
+
+}
+
+.button-email{
+padding: 1em;
+font-weight: 800;
+border: none;
+border-radius: 12px;
+background-color: #141414;
+color: #fff;
+
+}
+
+.cont-products{
+    font-size: 1.3em;
+
+}
+
+.titulo-products{
+    font-weight: 500;
+
+}
+
+
+.ul-products{
+list-style: none;
+color: #363636;
+cursor: pointer;
+
+}
+
+.copy{
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    font-weight: 200;
+    font-size: .9em;
+}

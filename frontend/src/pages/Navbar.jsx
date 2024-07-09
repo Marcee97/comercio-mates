@@ -2,18 +2,17 @@ import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import { useState } from "react";
 
-export const Navbar = ({ carrito, totalItems }) => {
+export const Navbar = ({ carrito, totalItems, navVisible }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const clickOpen = () => {
     setNavOpen((prevOpen) => !prevOpen);
   };
 
-  
 
   return (
     <>
-      <nav className="nav-navbar">
+      <nav className={navVisible ? 'nav-navbar' : 'nav-navbar scroll-view'}>
         <Link to={"/"} className="logo-navbar">
           <h2>LOGO</h2>
         </Link>

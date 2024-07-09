@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/carrito.css";
+import { Link } from "react-router-dom";
 export const Carrito = ({despliego, infoCarrito, totalItems}) => {
  
 const [infoProducto, setInfoProducto] = useState([])
@@ -34,7 +35,9 @@ setInfoProducto(infoProducto.filter(product => product !== items))
   return (
     <>
      <div className={carritoCloseOpen ? 'carrito' : 'carrito is-open'}>
-     <button onClick={clickClose}>Cerrar</button>
+     <span className="material-symbols-outlined button-cerrar-carrito" onClick={clickClose}>
+close
+</span>
 
       <div className="contenedor-carrito">
 
@@ -52,15 +55,25 @@ setInfoProducto(infoProducto.filter(product => product !== items))
         </div>
       ) )
     ) : (
-      <div className="contenedor-vacio-carrito">
-        <h3>No tienes productos en tu carrito</h3>
-        <div className="contenedor-redes-carrito">
+      <>
+      <div className="contenedor-texto-carrito-vacio">
 
-        <i className="fa-brands fa-twitter"></i>
-        <i className="fa-brands fa-instagram"></i>
-        <i className="fa-brands fa-tiktok"></i>
-        </div>
+        <h3 className="titulo-carrito-vacio">El carrito está vacío</h3>
+        <p className="texto-carrito-vacio-p">Una vez que añadas algo a tu carrito, aparecerá acá. ¿Listo para empezar?
+        </p>
+        <Link to={"/store"} className="link-carrito"><button className="button-empezar">Empezar<span className="material-symbols-outlined">
+arrow_right_alt
+</span></button></Link>
       </div>
+        
+      
+      <div className="contenedor-redes-carrito">
+
+      <i className="fa-brands fa-twitter"></i>
+      <i className="fa-brands fa-instagram"></i>
+      <i className="fa-brands fa-tiktok"></i>
+      </div>
+      </>
     )}
 
       </div>

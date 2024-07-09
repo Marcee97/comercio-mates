@@ -10,8 +10,8 @@ export const App = () => {
   const [despliegoCarrito, setDespliegoCarrito] = useState(false);
   const [modalData, setModalData] = useState([])
   const [infoCarrito, setInfoCarrito] = useState([])
-
   const [totalItems, setTotalItems] = useState(0)
+  const [navVisible, setNavVisible] = useState(true)
 
   const desplegarCarrito = () => {
     setDespliegoCarrito(!despliegoCarrito);
@@ -27,14 +27,15 @@ export const App = () => {
 setModalData(prevModalData => [...prevModalData, items])
   }
 
+
   return (
     <>
-      <Navbar carrito={desplegarCarrito} totalItems={totalItems}/>
+      <Navbar carrito={desplegarCarrito} totalItems={totalItems} navVisible={navVisible}/>
       <Carrito despliego={despliegoCarrito} infoCarrito={infoCarrito} totalItems={setTotalItems}/>
       <Modal itemSeleccionado={modalData} addCarrito={addCarrito}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store info={infoModal}/>} />
+        <Route path="/store" element={<Store info={infoModal} setNavVisible={setNavVisible}/>} />
       </Routes>
     </>
   );

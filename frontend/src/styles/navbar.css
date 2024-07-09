@@ -4,12 +4,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em ;
+  padding: 1em 5em;
   position: fixed;
   z-index: 45;
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
   text-shadow: 1px 8px 12px #000;
+}
+
+.scroll-view{
+  visibility: hidden;
 }
 
 .nav-navbar .logo-navbar {
@@ -89,7 +93,7 @@
   color: #fff;
   position: absolute;
   top: 0.3em;
-  right: 0.6em;
+  right: 1em;
   font-size: 2.5em;
   cursor: pointer;
   z-index: 45;

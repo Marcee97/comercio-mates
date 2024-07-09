@@ -1,8 +1,24 @@
 import "../styles/store.css";
 import { data } from "../helpers/data.js";
-import { Carrousel } from "../ui/Carrousel.jsx";
+import { useEffect } from "react";
+import { Footer } from "../ui/Footer.jsx";
 
-export const Store = ({ info }) => {
+export const Store = ({ info, setNavVisible }) => {
+  useEffect(() => {
+    const funcScroll = () => {
+      const scroll = window.scrollY;
+      if (scroll > 200) {
+        setNavVisible(false);
+      } else {
+        setNavVisible(true);
+      }
+    };
+    window.addEventListener("scroll", funcScroll);
+    return () => {
+      window.removeEventListener("scroll", funcScroll);
+    };
+  }, []);
+
   return (
     <>
       <section className="store">
@@ -18,7 +34,6 @@ export const Store = ({ info }) => {
             <i className="fa-brands fa-tiktok"></i>
           </p>
         </div>
-        <Carrousel />
 
         <div className="contenedor-products">
           {data.map((items, index) => (
@@ -157,6 +172,7 @@ export const Store = ({ info }) => {
           ))}
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
