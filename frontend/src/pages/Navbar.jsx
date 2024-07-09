@@ -20,7 +20,7 @@ export const Navbar = ({ carrito, totalItems, navVisible }) => {
           <Link to={"/store"} className="li-navbar">
             Store
           </Link>
-          <li className="li-navbar">About</li>
+          <Link to={'/about'} className="li-navbar">About</Link>
           <li className="li-navbar" onClick={carrito}>
             Pedidos ({totalItems})
           </li>

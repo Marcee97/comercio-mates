@@ -8,20 +8,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
-
 
 .store .palabra-fondo-store {
   color: #141312;
   font-family: monospace;
   top: 17vw;
-  font-size: 12vw;
+  font-size: 10vw;
   z-index: -1;
   font-weight: bold;
   position: fixed;
   margin: auto;
-  color: red;
 }
 .store .contenedor-redes-fondo-store {
   display: flex;
@@ -37,10 +34,9 @@ body {
   z-index: -1;
   font-weight: bold;
   color: #050505;
-
 }
 
-.redes-fondo-store :hover{
+.redes-fondo-store :hover {
   color: #fff;
 }
 
@@ -60,8 +56,6 @@ body {
   margin-bottom: 8em;
   box-shadow: 4px 6px 40px 10px;
   backdrop-filter: blur(4px);
-
-
 }
 
 .store .contenedor-products .articulo {
@@ -71,13 +65,13 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
- 
- max-width: 290px;
- min-width: 290px;
- height: 460px;
+
+  max-width: 290px;
+  min-width: 290px;
+  height: 460px;
 }
 
-.articulo:hover{
+.articulo:hover {
   outline: 1px solid #fff;
   cursor: pointer;
 }
@@ -89,7 +83,7 @@ body {
   width: 100%;
   height: 290px;
   overflow: hidden;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .store
@@ -103,14 +97,14 @@ body {
   max-height: 335px;
   object-fit: cover;
   border-radius: 9px;
-
 }
 
-@media(max-width:355px){
+@media (max-width: 355px) {
   .store
-  .contenedor-products
-  .articulo
-  .cont-img-articulo-store .img-articulo-store{
+    .contenedor-products
+    .articulo
+    .cont-img-articulo-store
+    .img-articulo-store {
     width: 60%;
     min-width: 50px;
   }
@@ -188,11 +182,9 @@ body {
   justify-items: center;
   padding: 1em;
   gap: 5px;
-box-shadow: 4px 6px 40px 10px;
-margin-bottom: 8em;
-backdrop-filter: blur(4px);
-
-
+  box-shadow: 4px 6px 40px 10px;
+  margin-bottom: 8em;
+  backdrop-filter: blur(4px);
 }
 
 .store .separador-products .img-separador {
