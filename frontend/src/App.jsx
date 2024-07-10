@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import { Modal } from "./ui/Modal";
 import { Carrito } from "./ui/Carrito";
 import { useState } from "react";
-import { About } from "./pages/About";
 
 export const App = () => {
   const [despliegoCarrito, setDespliegoCarrito] = useState(false);
@@ -37,7 +36,6 @@ setModalData(prevModalData => [...prevModalData, items])
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store info={infoModal} setNavVisible={setNavVisible}/>} />
-        <Route path="/about" element={<About/>}/>
       </Routes>
     </>
   );

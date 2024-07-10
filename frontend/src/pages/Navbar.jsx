@@ -20,7 +20,7 @@ export const Navbar = ({ carrito, totalItems, navVisible }) => {
           <Link to={"/store"} className="li-navbar">
             Store
           </Link>
-          <Link to={'/about'} className="li-navbar">About</Link>
+         
           <li className="li-navbar" onClick={carrito}>
             Pedidos ({totalItems})
           </li>
@@ -40,7 +40,6 @@ close
 </span></p>
         <ul className="ul-nav-mobile">
           <li className="li-nav-mobile">Store</li>
-          <li className="li-nav-mobile">About</li>
           <li className="li-nav-mobile">Pedidos</li>
         </ul>
       </div>
